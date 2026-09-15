@@ -1,0 +1,134 @@
+/* CSS resets */
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+/* respect user font size preference */
+html {
+
+    font-size: 100%;
+
+}
+
+/* General CSS (Salute) */
+
+
+body {
+    background-color: rgb(202, 158, 158);
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+}
+
+header {
+    padding: 6rem;
+    background-color: #ffffff;
+    margin-bottom: 3rem;
+    border-bottom: 0.5rem solid #000000;
+    /* text-align: center; */
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+main {
+    max-width: 128rem;
+    margin: 2rem auto;
+}
+
+.about-section, .portfolio-section, .contact-section {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+    
+}
+
+.about-content, .portfolio-content, .contact-content {
+    max-width: 120rem;
+    margin: 2rem auto;
+}
+
+.portfolio-item {
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+    background-color:   #4a1717;
+    padding: 2rem;
+    text-align: center;
+    color: #ffffff;
+        border-radius: 0.5rem;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+        border: 0.2rem solid #000000;
+       
+}
+
+.about-section {
+    color: #ffffff;
+    background-color: #673636;
+  border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.2rem solid #000000;
+    
+}
+
+.portfolio-section {
+    background-color: #673636;
+  border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.2rem solid #000000;
+    color: #ffffff; 
+ 
+}
+
+.portfolio-item img {
+   max-width: 100%;
+   display: block;  
+    
+margin: 0 auto;
+border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.2rem solid #000000;
+}
+.contact-content {
+    max-width: 64rem;
+    margin: 2 rem;  
+    padding: 2rem 0;
+}
+
+footer {
+    background-color: #2e2727;
+    color: #fafafa;
+    padding: 1rem;
+    text-align: center;
+    border-top: 0.5rem solid #000000;
+
+
+}
+x
+footer p {
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: bold;
+    text-align: left;
+}
+
+nav {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 2rem;
+}
+nav a {
+    color: #000000;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+    display: inline-block;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.2rem solid #000000;
+    color: #000000; 
+ 
+}   
