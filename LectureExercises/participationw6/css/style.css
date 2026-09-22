@@ -1,0 +1,86 @@
+/*
+CSS RESETS
+*/
+
+
+/* Change box-sizing default to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* Remove default spacing */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Respect user font settings */
+html {
+  font-size: 100%;
+}
+
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  display: block;
+}
+.Title {
+    font-family: 'Creepster', cursive;
+    text-align: center;
+    margin: 80px auto;
+    animation: scale 4s infinite;
+
+
+}
+
+@keyframes scale {
+
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.ghost {
+    width: 30%;
+    height: 30%;
+    margin: 0 auto;
+    animation: float 4s infinite;
+
+}
+
+.ghost2 {
+    width: 10%;
+    height: 10%;
+    margin: 0.6rem, 1rem;
+    transition: all 0.3s;
+    
+    
+}
+.ghost2:hover {
+    opacity: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+        
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
