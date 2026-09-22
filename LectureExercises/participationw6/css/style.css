@@ -4,6 +4,8 @@ CSS RESETS
 
 
 /* Change box-sizing default to border-box */
+
+
 *,
 *::before,
 *::after {
@@ -20,20 +22,33 @@ CSS RESETS
 
 /* Respect user font settings */
 html {
-  font-size: 100%;
+  font-size: 100%
 }
 
+body{
+    animation: color 4s infinite alternate;
+}
+
+@keyframes color {
+
+0% {background-color: black;}
+50% {background-color: rgb(32, 20, 32);}
+100% {background-color: rgb(31, 25, 13);}
+    
+}
 
 /* Make images responsive */
 img {
   max-width: 100%;
   display: block;
 }
+
 .Title {
     font-family: 'Creepster', cursive;
     text-align: center;
     margin: 80px auto;
     animation: scale 4s infinite;
+    color: orangered;
 
 
 }
@@ -55,8 +70,13 @@ img {
     width: 30%;
     height: 30%;
     margin: 0 auto;
+    transition: all 0.3s ease;
     animation: float 4s infinite;
 
+}
+
+.ghost:hover {
+    opacity: 0;
 }
 
 .ghost2 {
@@ -64,12 +84,25 @@ img {
     height: 10%;
     margin: 0.6rem, 1rem;
     transition: all 0.3s;
-    
-    
+    animation: floatx 10s infinite, alternate;
+}
+
+@keyframes floatx {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100rem);
+    }
+    100% {
+        transform: translatX(0);
+    }
 }
 .ghost2:hover {
     opacity: 0;
 }
+
+
 
 @keyframes float {
     0% {
