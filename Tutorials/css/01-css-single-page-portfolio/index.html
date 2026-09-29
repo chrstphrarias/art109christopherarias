@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christopher's Portfolio n' stuff</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Clarity+City&amp;family=Fraunces&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body>  
 
     <header>
-<nav>
-
-    <a href="#about-section">About</a>
-    <a href="#portfolio-section">Work
-    </a>
-    <a href="#contact-section">Contact</a>
+<nav class=" navbar">
+<div class="nav-brand">
+    <h1>Christopher Arias</h1>
+</div>
+<div class="nav">
+    <button class="hamburger">☰</button> 
+    <ul class= "nav-menu">
+    <li><a href="#about-section">About</a></li>
+    <li><a href="#portfolio-section">Work</a></li>
+    <li><a href="#contact-section">Contact</a></li>
+    </ul>
+</div>
 </nav>  
 
 
@@ -73,7 +82,10 @@
         <section class="contact-section" id="contact-section">
 <div class="contact-content">
     <h2>Contact Me</h2>
-    <p>Email: cariasnavia@gmail.com</p>
+    <div class="contact-links">
+        <a class="button" href="mailto:cariasnavia@gmail.com">Email</a>
+        <a class="button" href="https://www.youtube.com/@_ChristopherArias" target="_blank" rel="noopener noreferrer">YouTube</a>
+    </div>
 </div>
         </section>
     </main>
@@ -85,7 +97,11 @@
 <p>&copy; 2026 Christopher Arias. </p>
 
     </footer>
+<script src="js/main.js"></script>
 
+
+
+</script>
 
 
 
