@@ -105,6 +105,18 @@ main {
        
 }
 
+.portfolio-item a {
+    color: var(--light);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+.portfolio-item a:hover,
+.portfolio-item a:focus-visible {
+    text-decoration: underline;
+}
+
 .about-section {
     color: var(--light);
     background-color: var(--accent-1);
@@ -394,4 +406,41 @@ footer img {
     footer p{
         font-size: 2rem;
     }
+}
+
+.portfolio-item a {
+text-decoration: none;
+color:var(--bg-color-1)
+}
+.project-section {
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.project-content {
+    max-width: 60rem;
+    margin: 0 auto 7rem auto;
+}
+
+.project-content h2 {
+    text-align: left;
+    margin: 2rem 0;
+    font-size: clamp(3rem, 4vw, 5rem);
+    line-height: 1.1;
+}
+
+.project-content p {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    line-height: 1.6;
+    margin-top: 1.5rem;
+}
+
+.project-content img {
+    display: block;
+    width: min(100%, 42rem);
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    border: 0.2rem solid var(--dark);
 }

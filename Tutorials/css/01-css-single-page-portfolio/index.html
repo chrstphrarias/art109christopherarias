@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Clarity+City&amp;family=Fraunces&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link  rel="stylesheet" href="css/baguetteBox.css">
 </head>
 
 <body>  
@@ -16,7 +17,7 @@
     <header>
 <nav class=" navbar">
 <div class="nav-brand">
-    <h1>Christopher Arias</h1>
+    <a href="../../../index.html"> <h1>C.  Arias </h1> </a>
 </div>
 <div class="nav">
     <button class="hamburger">☰</button> 
@@ -29,7 +30,7 @@
 </nav>  
 
 
-        <h1>Christopher Arias' Portfolio</h1>
+        <h1>Christopher Arias: Portfolio</h1>
 
     </header>
 
@@ -39,7 +40,7 @@
 
 <div class="about-content">
             <h2>About Me</h2>
-            <p>My name is Christopher Arias and I am an English Major minoring in DMA.</p>
+            <p>Hello, I am Christopher Arias, I am studying English and Digital Media Art at San Jose State University. I strive to involve myself in the publishing, media, and content creation industries of Silicon Valley where I can explore my storytelling and digital media skills to their fullest. I seek to create art that exudes an atmosphere of absurd humor, unique color, and warm comfort. A website that is straight to the point denies the user an experience; we should be inconvenienced for the sake of experiencing.</p>
         </div>
 
          
@@ -51,28 +52,27 @@
             <div class="portfolio-content flex-container-grid">
                 
                 <div class="portfolio-item flex-item-grid">
-                    <img src="images/LikeAllBeforeYou.jpeg" alt="Like All Before You">
-                    <h3>Like All Before You</h3>
+                    <a class="lightbox-link" href="images/LikeAllBeforeYou.jpeg" data-caption="Like All Before You"><img src="images/LikeAllBeforeYou.jpeg" alt="Like All Before You"></a>
+                    <a href="projects/LABY/index.html"><h3>Like All Before You</h3></a>
                     <p>My own rendition of the Voidz' album art.</p>
 
                 </div>
                 <div class="portfolio-item flex-item-grid">
-                    <img src="images/PhrazesForTheYoung.png" alt="Phrazes For The Young">
-                    <h3>Phrazes For The Young</h3>
+                    <a class="lightbox-link" href="images/PhrazesForTheYoung.png" data-caption="Phrazes For The Young"><img src="images/PhrazesForTheYoung.png" alt="Phrazes For The Young"></a>
+                    <a href="projects/PFTY/index.html"><h3>Phrazes For The Young</h3></a>
                     <p>My own rendition of the Phrazes For The Young album art.</p>
 
                 </div>
                 <div class="portfolio-item flex-item-grid">
-                    <img src="images/ThreatLevelMidnight.png" alt="Threat Level Midnight">
-                    <h3>Threat Level Midnight</h3>
+                    <a class="lightbox-link" href="images/ThreatLevelMidnight.png" data-caption="Threat Level Midnight"><img src="images/ThreatLevelMidnight.png" alt="Threat Level Midnight"></a>
+                    <a href="projects/TLM/index.html"><h3>Threat Level Midnight</h3></a>
                     <p> Poster for the movie "Threat Level Midnight" </p>
 
                 </div>
                 <div class="portfolio-item flex-item-grid">
-                    <img src="images/chopsticks.png" alt="Chopsticks">
-                    <h3>Chopsticks</h3>
+                    <a class="lightbox-link" href="images/chopsticks.png" data-caption="Chopsticks"><img src="images/chopsticks.png" alt="Chopsticks"></a>
+                    <a href="projects/CHP/index.html"><h3>Chopsticks</h3></a>
                     <p> A man feeds his friend with chopsticks. Only Ordinary.</p>
-
                 </div>
             </div>
 
@@ -86,7 +86,7 @@
         <a class="button" href="mailto:cariasnavia@gmail.com">Email</a>
         <a class="button" href="https://www.youtube.com/@_ChristopherArias" target="_blank" rel="noopener noreferrer">YouTube</a>
     </div>
-</div>
+</div>  
         </section>
     </main>
 
@@ -98,13 +98,13 @@
 
     </footer>
 <script src="js/main.js"></script>
-
-
-
+<script src="js/baguetteBox.js"></script>
+<script>
+    baguetteBox.run('.portfolio-content', {
+        captions: true,
+        buttons: true
+    });
 </script>
-
-
-
 </body>
 
 </html>
