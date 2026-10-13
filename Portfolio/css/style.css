@@ -49,13 +49,27 @@ h1, h2, h3 {
 }
 
 header {
+
+    
     padding: clamp(3rem, 7vw, 6rem);
     background:
+
+
         linear-gradient(90deg,
+
+
             #612329 0%, #9a3c42 3%, #72282f 6%, #ad4d4c 10%,
+
             #70262d 14%, transparent 18%, transparent 82%,
+
             #70262d 86%, #ad4d4c 90%, #72282f 94%, #9a3c42 97%, #612329 100%),
+
+
         linear-gradient(180deg, #762b31 0 1.2rem, transparent 1.2rem),
+        url("../images/window-frames.svg") center / auto 100% repeat-x,
+        url("../images/windoww.png") center / auto 100% 
+        repeat-x,
+
         var(--bg-color-2);
     margin-bottom: clamp(2rem, 4vw, 4rem);
     border-bottom: 0.2rem solid var(--line);
@@ -67,6 +81,18 @@ header h1 {
     color: var(--dark);
     text-shadow: 0.1rem 0.2rem 0.5rem rgba(60, 48, 39, 0.16);
 }
+
+header > h1 {
+    position: relative;
+    display: table;
+    margin-top: 2rem;
+    padding: 0.8rem 1.4rem;
+    background-color: var(--light);
+    border: 0.2rem solid var(--dark);
+    border-radius: 1.6rem;
+    box-shadow: var(--shadow);
+}
+
 
 main {
     width: min(92%, 128rem);
@@ -133,11 +159,16 @@ main {
 
 .about-section {
     color: var(--light);
-    background-color: var(--accent-1);
+    background-color: #603238;
+    background-image: repeating-linear-gradient(
+        90deg,
+        transparent 0 3.2rem,
+        rgba(255, 225, 194, 0.045) 3.2rem 3.35rem
+    );
     padding: clamp(2rem, 4vw, 4rem);
     border-radius: 1.6rem;
     box-shadow: var(--shadow);
-    border: 0.1rem solid rgba(60, 48, 39, 0.2);
+    border: 0.35rem double #d6b18b;
 }
 
 .portfolio-section {
@@ -305,6 +336,25 @@ nav a:hover {
     color: var(--light);
 }
 
+.nav-brand a,
+.nav-brand a:hover {
+    display: block;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    line-height: 0;
+}
+
+.nav-brand img {
+    display: block;
+    width: clamp(10rem, 16vw, 18rem);
+    height: auto;
+    border-radius: 1.2rem;
+}
+
 /* Base styles: large desktop (1200px and up) */
 
 /* Large laptops & small desktops */
@@ -442,9 +492,13 @@ color:var(--bg-color-1)
 .project-content {
     width: min(92%, 72rem);
     margin: 0 auto clamp(4rem, 8vw, 8rem);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+    gap: clamp(1rem, 2vw, 2rem);
 }
 
 .project-content h2 {
+    grid-column: 1 / -1;
     text-align: left;
     margin: 2rem 0;
     font-size: clamp(3rem, 4vw, 5rem);
@@ -452,17 +506,42 @@ color:var(--bg-color-1)
 }
 
 .project-content p {
+    grid-column: 1 / -1;
     font-size: clamp(1.8rem, 2vw, 2.4rem);
     line-height: 1.6;
     margin-top: 1.5rem;
 }
 
-.project-content img {
+.project-content a {
     display: block;
-    width: min(100%, 42rem);
+    min-width: 0;
+}
+
+.project-content a img {
+    display: block;
+    width: 100%;
     max-width: 100%;
     margin: 0 auto;
     border-radius: 1.2rem;
     box-shadow: var(--shadow);
     border: 0.1rem solid var(--line);
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.project-content a.single-image {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 42rem);
+}
+
+.project-content a.single-image img {
+    aspect-ratio: auto;
+    object-fit: contain;
+}
+
+.project-content a.featured {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 80rem);
 }
