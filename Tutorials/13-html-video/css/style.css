@@ -1,0 +1,29 @@
+.youtube-video {
+    position: relative;
+    z-index: 0;
+}
+
+.brainscereal {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    z-index: 1;
+}
+
+main {
+    position: relative;
+}
+
+.brainsscereal-text-div {
+    position: relative;
+    margin: 50px auto;
+    max-width: 400px;
+    font-size: 3rem;
+}
+
+.mind-blown-shark {
+    position: absolute;
+    top: 60rem;
+    left: 30px;
+    z-index: 1;
+}
