@@ -5,6 +5,7 @@ const state = {
     callShown: false,
     soundMuted: false,
     uiMode: 0,
+    uiTimerStarted: false,
     camera: null,
     audio: null,
     volume: null
@@ -487,9 +488,12 @@ function startExperience() {
         state.clicks += 1;
         changeChaos(1);
         get("#click-count").textContent = state.clicks;
+        if (!state.uiTimerStarted) {
+            state.uiTimerStarted = true;
+            window.setInterval(cycleInterface, 5000);
+        }
     });
 
-    window.setInterval(cycleInterface, 5000);
     fillWordWall();
     makeNoobFollowAndBounce();
     makeBrainscerealSummonDog();
