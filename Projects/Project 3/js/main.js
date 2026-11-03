@@ -107,8 +107,8 @@ function startEntrance() {
         }
 
         dodges += 1;
-        button.style.setProperty("--dodge-x", `${Math.random() * 140 - 70}px`);
-        button.style.setProperty("--dodge-y", `${Math.random() * 80 - 40}px`);
+        button.style.setProperty("--dodge-x", `${Math.random() * 500 - 250}px`);
+        button.style.setProperty("--dodge-y", `${Math.random() * 360 - 180}px`);
         button.classList.add("is-dodging");
     });
 
