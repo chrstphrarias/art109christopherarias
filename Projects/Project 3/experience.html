@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#10172b">
+    <title>Brainscereal: The Experience</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="experience-page">
+    <header class="experience-header">
+        <a class="home-link" href="index.html" draggable="true">Brainscereal</a>
+        <div class="status-panel" aria-label="Experience status">
+            <label class="meter-label" for="chaos-meter" draggable="true">hi <span id="chaos-value" draggable="true">0</span>%</label>
+            <progress id="chaos-meter" max="100" value="0">0%</progress>
+            <span draggable="true">Clicks: <span id="click-count" draggable="true">0</span></span>
+            <span draggable="true">Deaths: <span id="death-count" draggable="true">0</span></span>
+        </div>
+        <div class="header-controls">
+            <button id="mute-button" type="button" aria-pressed="false" draggable="true">Mute sound</button>
+            <button id="reset-button" type="button" draggable="true">Hyperspace reset</button>
+        </div>
+    </header>
+
+    <main id="scene" class="scene" data-scene="dream">
+        <button id="noob" class="noob-character" type="button" aria-label="Roblox noob. Click anywhere to make it bounce.">
+            <img src="media/brainscerealavatar.png" alt="">
+        </button>
+        <img class="robin-interaction" src="media/robinspeed.gif" alt="" aria-hidden="true">
+
+        <section class="video-panel" aria-label="Background video">
+            <iframe
+                class="youtube-video"
+                src="https://www.youtube.com/embed/26j1pkS83dQ?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=26j1pkS83dQ"
+                title="Background video"
+                allow="autoplay; encrypted-media; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen></iframe>
+        </section>
+
+        <section class="brain-area" aria-labelledby="wall-title">
+            <img class="brainscereal" src="media/brainscereal.gif" alt="A looping Brainscereal character">
+            <div class="word-wall">
+                <h1 id="wall-title" draggable="true"><a href="https://tenor.com/view/brainscereal-brain-cereal-brahdereal-bradh-gif-16840134794896337025" target="_blank" rel="noopener noreferrer">Is this real?</a></h1>
+                <div id="word-wall" class="word-cloud" aria-label="Clickable Brainscereal words"></div>
+                <p id="words-left" class="words-left" aria-live="polite" draggable="true"></p>
+            </div>
+        </section>
+
+        <section class="video-section" aria-labelledby="video-title">
+            <h2 id="video-title" draggable="true">Nerd videos</h2>
+            <div id="video-container" class="hover-videos-container">
+                <video class="hover-video" muted loop playsinline preload="metadata" tabindex="0" aria-label="Nerd emote video">
+                    <source src="media/NerdEmote2.mp4" type="video/mp4">
+                </video>
+                <video class="hover-video" muted loop playsinline preload="metadata" tabindex="0" aria-label="Nerd emote video">
+                    <source src="media/NerdEmote2.mp4" type="video/mp4">
+                </video>
+                <video class="hover-video" muted loop playsinline preload="metadata" tabindex="0" aria-label="Nerd emote video">
+                    <source src="media/NerdEmote2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="call-popup" class="call-popup" role="dialog" aria-labelledby="call-title" hidden>
+        <div class="call-participants">
+            <img src="media/johnpork.png" alt="John Pork">
+            <div class="call-camera">
+                <video id="call-webcam" autoplay muted playsinline aria-label="Your live camera preview"></video>
+                <p id="call-camera-status" draggable="true">Your camera turns on if you accept.</p>
+            </div>
+        </div>
+        <div class="call-copy">
+            <h2 id="call-title" draggable="true">John Pork is calling...</h2>
+            <div class="call-actions">
+                <button id="decline-call" type="button" draggable="true">Decline</button>
+                <button id="accept-call" type="button" draggable="true">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hyperspace-transition" aria-hidden="true">
+        <img class="hyperspace-animation" src="media/hyperspace.gif" alt="">
+        <img class="robin-speed" src="media/robinspeed.gif" alt="">
+        <p class="warp-message" draggable="true">Warping to another scene...</p>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
