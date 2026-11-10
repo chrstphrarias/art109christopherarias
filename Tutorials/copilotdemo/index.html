@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="A quiet pixel-art scene of a duck, a tree, and one very tempting apple.">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+  <title>The Sleepy Duck</title>
+</head>
+<body>
+  <audio id="quack-sound" src="media/quack.mp3" preload="auto" hidden></audio>
+  <main class="storybook">
+    <section class="scene-frame is-asleep" aria-label="Interactive pixel-art scene">
+      <svg class="scene" viewBox="0 0 1280 896" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="scene-title scene-description">
+        <title id="scene-title">A duck sleeping under an apple tree</title>
+        <desc id="scene-description">Activate the hanging apple to drop it onto the duck. Drag the fallen apple back to the branch to make the duck fall asleep again.</desc>
+
+        <svg class="tree" x="160" y="64" width="640" height="704" viewBox="0 0 64 64" aria-hidden="true" shape-rendering="crispEdges">
+          <rect x="25" y="17" width="14" height="45" fill="#403b32"/>
+          <rect x="31" y="17" width="5" height="45" fill="#51463a"/>
+          <rect x="19" y="47" width="12" height="5" fill="#403b32"/>
+          <rect x="36" y="43" width="12" height="5" fill="#403b32"/>
+          <g fill="#403b32">
+            <rect x="39" y="22" width="6" height="2"/>
+            <rect x="43" y="20" width="6" height="2"/>
+            <rect x="47" y="18" width="6" height="2"/>
+            <rect x="51" y="16" width="6" height="2"/>
+            <rect x="55" y="14" width="6" height="2"/>
+            <rect x="59" y="12" width="4" height="2"/>
+          </g>
+          <g fill="#51463a">
+            <rect x="40" y="23" width="4" height="1"/>
+            <rect x="46" y="21" width="4" height="1"/>
+            <rect x="52" y="17" width="4" height="1"/>
+            <rect x="58" y="13" width="3" height="1"/>
+          </g>
+
+          <rect x="22" y="2" width="10" height="5" fill="#344b37"/>
+          <rect x="15" y="5" width="18" height="5" fill="#3c563d"/>
+          <rect x="9" y="8" width="34" height="5" fill="#344b37"/>
+          <rect x="5" y="11" width="42" height="5" fill="#3c563d"/>
+          <rect x="3" y="14" width="44" height="5" fill="#344b37"/>
+          <rect x="2" y="17" width="47" height="5" fill="#3c563d"/>
+          <rect x="3" y="20" width="45" height="5" fill="#344b37"/>
+          <rect x="5" y="23" width="42" height="5" fill="#3c563d"/>
+          <rect x="8" y="26" width="37" height="5" fill="#344b37"/>
+          <rect x="12" y="29" width="29" height="5" fill="#3c563d"/>
+          <rect x="17" y="32" width="20" height="4" fill="#344b37"/>
+
+          <rect x="10" y="11" width="4" height="4" fill="#496146"/>
+          <rect x="20" y="8" width="4" height="4" fill="#496146"/>
+          <rect x="34" y="5" width="4" height="4" fill="#496146"/>
+          <rect x="39" y="14" width="4" height="4" fill="#496146"/>
+          <rect x="7" y="20" width="4" height="4" fill="#496146"/>
+          <rect x="15" y="24" width="4" height="4" fill="#496146"/>
+          <rect x="34" y="21" width="4" height="4" fill="#496146"/>
+          <rect x="25" y="29" width="4" height="4" fill="#496146"/>
+        </svg>
+
+        <svg class="apple" id="apple" x="640" y="152" width="192" height="192" viewBox="0 0 64 64" role="button" tabindex="0" aria-label="Drop the apple to wake the duck" shape-rendering="crispEdges">
+          <rect x="32" y="8" width="8" height="8" fill="#65503d"/>
+          <rect x="40" y="8" width="8" height="8" fill="#496146"/>
+          <rect x="24" y="16" width="32" height="8" fill="#a95049"/>
+          <rect x="16" y="24" width="40" height="24" fill="#a95049"/>
+          <rect x="24" y="48" width="24" height="8" fill="#93443f"/>
+        </svg>
+
+        <svg class="duck" id="duck" x="640" y="448" width="512" height="384" viewBox="0 0 64 64" aria-label="Sleeping duck" shape-rendering="crispEdges">
+          <rect x="10" y="32" width="42" height="18" fill="#dcae48"/>
+          <rect x="16" y="26" width="32" height="8" fill="#efcb62"/>
+          <rect x="4" y="38" width="10" height="8" fill="#efcb62"/>
+          <rect x="16" y="40" width="28" height="8" fill="#d69c3d"/>
+          <g class="duck-head">
+            <rect x="26" y="16" width="20" height="18" fill="#f4d36a"/>
+            <rect x="30" y="12" width="12" height="8" fill="#f4d36a"/>
+            <rect class="duck-eye" x="34" y="22" width="8" height="2" fill="#413b35"/>
+            <rect class="duck-eye-open" x="35" y="19" width="4" height="6" fill="#413b35"/>
+            <rect class="duck-eye-glint" x="35" y="19" width="2" height="2" fill="#fff8d9"/>
+            <rect x="46" y="22" width="10" height="4" fill="#c47b4c"/>
+            <rect x="49" y="26" width="7" height="3" fill="#b46b43"/>
+          </g>
+          <rect x="19" y="48" width="7" height="4" fill="#c47b4c"/>
+          <rect x="39" y="48" width="7" height="4" fill="#c47b4c"/>
+          <g class="wake-marks" fill="#b8aa82" aria-hidden="true">
+            <rect x="58" y="19" width="3" height="3"/>
+            <rect x="57" y="17" width="3" height="3"/>
+            <rect x="59" y="15" width="3" height="3"/>
+            <rect x="62" y="28" width="2" height="5"/>
+            <rect x="60" y="30" width="6" height="2"/>
+          </g>
+        </svg>
+
+        <svg class="sleep-marks" aria-hidden="true">
+          <svg class="sleep-mark sleep-mark-one" x="864" y="432" width="64" height="64" viewBox="0 0 64 64">
+            <g fill="#a5a18e">
+              <rect x="12" y="12" width="40" height="8"/>
+              <rect x="36" y="20" width="8" height="8"/>
+              <rect x="28" y="28" width="8" height="8"/>
+              <rect x="20" y="36" width="8" height="8"/>
+              <rect x="12" y="44" width="40" height="8"/>
+            </g>
+          </svg>
+          <svg class="sleep-mark sleep-mark-two" x="960" y="320" width="64" height="64" viewBox="0 0 64 64">
+            <g fill="#a5a18e">
+              <rect x="12" y="12" width="40" height="8"/>
+              <rect x="36" y="20" width="8" height="8"/>
+              <rect x="28" y="28" width="8" height="8"/>
+              <rect x="20" y="36" width="8" height="8"/>
+              <rect x="12" y="44" width="40" height="8"/>
+            </g>
+          </svg>
+          <svg class="sleep-mark sleep-mark-three" x="1056" y="208" width="64" height="64" viewBox="0 0 64 64">
+            <g fill="#a5a18e">
+              <rect x="12" y="12" width="40" height="8"/>
+              <rect x="36" y="20" width="8" height="8"/>
+              <rect x="28" y="28" width="8" height="8"/>
+              <rect x="20" y="36" width="8" height="8"/>
+              <rect x="12" y="44" width="40" height="8"/>
+            </g>
+          </svg>
+        </svg>
+      </svg>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,210 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  color-scheme: dark;
+  background: #000;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.storybook,
+.scene-frame {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  place-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+.scene {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.apple {
+  cursor: pointer;
+  transform-box: view-box;
+  transform-origin: 60% 30.357142857%;
+  touch-action: none;
+  user-select: none;
+}
+
+.apple:focus {
+  outline: none;
+  filter: drop-shadow(0 0 5px #b8aa82);
+}
+
+.apple:hover {
+  filter: drop-shadow(0 0 4px #b8aa82);
+}
+
+.apple.is-dragging {
+  cursor: grabbing;
+  animation: none !important;
+}
+
+.scene-frame.is-dropping .apple,
+.scene-frame.is-bouncing .apple {
+  pointer-events: none;
+}
+
+.duck-eye-open,
+.duck-eye-glint,
+.wake-marks {
+  opacity: 0;
+}
+
+.sleep-mark {
+  animation: snooze-one 5s ease-in-out infinite;
+}
+
+.sleep-mark-two {
+  animation-name: snooze-two;
+}
+
+.sleep-mark-three {
+  animation-name: snooze-three;
+}
+
+.scene-frame.is-dropping .apple {
+  animation: apple-fall 1100ms cubic-bezier(.45, 0, .8, .45) forwards;
+}
+
+.scene-frame.is-dropping .duck {
+  animation: duck-bonk 320ms steps(2, end) 700ms 1;
+}
+
+.scene-frame.is-bouncing .apple {
+  animation: apple-bounce 620ms cubic-bezier(.25, .6, .35, 1) forwards;
+}
+
+.scene-frame.is-awake .duck-eye {
+  opacity: 0;
+}
+
+.scene-frame.is-awake .duck-eye-open,
+.scene-frame.is-awake .duck-eye-glint,
+.scene-frame.is-awake .wake-marks {
+  opacity: 1;
+}
+
+.scene-frame.is-awake .sleep-marks {
+  visibility: hidden;
+}
+
+.scene-frame.is-awake .duck-eye-glint {
+  animation: blink 3.2s steps(1, end) infinite;
+}
+
+.scene-frame.is-awake .duck {
+  animation: duck-bonk 320ms steps(2, end) 1;
+}
+
+.scene-frame.is-asleep .sleep-marks {
+  visibility: visible;
+}
+
+.scene-frame.is-asleep .duck-head {
+  animation: sleep-bob 5s ease-in-out infinite;
+}
+
+@keyframes apple-fall {
+  0% { transform: translate(0, 0) rotate(0); }
+  64% { transform: translate(3.75%, 16.071428571%) rotate(180deg); }
+  76% { transform: translate(3.75%, 10.714285714%) rotate(216deg); }
+  100% { transform: translate(3.75%, 16.071428571%) rotate(180deg); }
+}
+
+@keyframes apple-bounce {
+  0% { transform: translate(3.75%, 16.071428571%) rotate(180deg); }
+  24% { transform: translate(-1.875%, 24.107142857%) rotate(288deg); }
+  100% { transform: translate(-15%, 37.5%) rotate(540deg); }
+}
+
+@keyframes duck-bonk {
+  0%, 100% { transform: translateY(0); }
+  35% { transform: translateY(8px); }
+  65% { transform: translateY(-8px); }
+}
+
+@keyframes snooze-one {
+  0%, 4% { opacity: 0; transform: translate(0, 0); }
+  6% { opacity: 1; transform: translate(0, 0); }
+  48%, 100% { opacity: 0; transform: translate(56px, -64px); }
+}
+
+@keyframes snooze-two {
+  0%, 11% { opacity: 0; transform: translate(0, 0); }
+  15% { opacity: 1; transform: translate(0, 0); }
+  55%, 100% { opacity: 0; transform: translate(56px, -64px); }
+}
+
+@keyframes snooze-three {
+  0%, 23% { opacity: 0; transform: translate(0, 0); }
+  27% { opacity: 1; transform: translate(0, 0); }
+  96%, 100% { opacity: 0; transform: translate(56px, -64px); }
+}
+
+@keyframes sleep-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+
+@keyframes blink {
+  0%, 92%, 100% { opacity: 1; }
+  94%, 98% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+
+  .scene-frame.is-asleep .sleep-mark,
+  .scene-frame.is-asleep .duck-head,
+  .scene-frame.is-awake .duck-eye-glint {
+    animation-duration: 5s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .scene-frame.is-dropping .apple {
+    animation-duration: 1100ms !important;
+  }
+
+  .scene-frame.is-bouncing .apple {
+    animation-duration: 620ms !important;
+  }
+
+  .scene-frame.is-dropping .duck {
+    animation-duration: 320ms !important;
+    animation-delay: 700ms !important;
+  }
+
+  .scene-frame.is-awake .duck {
+    animation-duration: 320ms !important;
+  }
+}
