@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="claude:viewport-fit-sides" content="cover">
+  <title>Big Deal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="tint"></div>
+<header class="hud">
+  <div class="brand">Big Deal<small>cereal, checks, and kanji</small></div>
+  <div class="stats">
+    <div class="stat"><b id="sCash">$0</b><span>cash</span></div>
+    <div class="stat sus"><span>fed suspicion</span><div class="meter hot"><i id="mSus"></i></div></div>
+    <div class="stat sus"><span>lead in cereal belt</span><div class="meter lead"><i id="mLead"></i></div></div>
+  </div>
+</header>
+
+<main class="scene">
+  <div class="rooms">
+
+    <section class="room" id="rCereal">
+      <h2>Cereal Works <em>cost cutting dept.</em></h2>
+      <p class="lede">Adjust the recipe per box, cheaper ingredients make more money.</p>
+      <div class="inner">
+        <img class="box" src="media/BrainsCereal.png" alt="Brains Cereal box with lead paint as its first ingredient">
+        <label for="leadSlider" class="small">Cheap-filler pigment (Lowers cost per box)</label>
+        <input id="leadSlider" type="range" min="0" max="100" value="0">
+        <div class="kv"><span>filler</span><b id="leadPct">0%</b></div>
+        <div class="kv"><span>margin per box</span><b id="leadMargin">$1.00</b></div>
+        <div class="kv"><span>supplier says</span><b id="leadSays">"fully safe"</b></div>
+        <div class="row mt-6"><button class="btn" id="runLine">Run the line (10 boxes)</button></div>
+        <div class="warn" id="leadWarn"></div>
+      </div>
+    </section>
+
+    <section class="room" id="rPress">
+      <h2>Check Press <em>cash flow dept.</em></h2>
+      <p class="lede">They will never know.</p>
+      <div class="inner">
+        <img class="check-preview" src="media/blankcheck.png" alt="Blank check">
+        <div class="tray" id="tray" aria-live="polite"></div>
+        <div class="row">
+          <button class="btn" id="printChk">Print blank check</button>
+          <button class="btn alt" id="cashChk">Cash them all</button>
+        </div>
+        <div class="kv mt-6"><span>blank checks in hand</span><b id="chkN">0</b></div>
+        <div class="kv"><span>each pays out</span><b>$40, +suspicion</b></div>
+        <p class="small" id="pressNote">The bank is friendly. The bank is also a federal institution.</p>
+      </div>
+    </section>
+
+    <section class="room language" id="rLang">
+      <h2>Language Loft <em>japanese, via pirates</em></h2>
+      <p class="lede">Learn real Japanese from the words the show keeps shouting.</p>
+      <div class="inner">
+        <div class="card language-card" aria-label="Japanese word">
+          <div class="jp">海賊</div>
+          <div class="kana"></div>
+          <div class="ro"></div>
+        </div>
+        <div class="language-choices" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="kv mt-10"><span>words mastered</span><b>0 / 12</b></div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<div class="journal"><ul id="log" aria-live="polite"></ul></div>
+<div id="raid"><div>FEDERAL RAID<br><small class="raid-note">hands where we can see them</small></div></div>
+<script src="js/main.js"></script>
+
+</body></html>
